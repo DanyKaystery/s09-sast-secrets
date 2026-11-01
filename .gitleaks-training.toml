@@ -1,0 +1,6 @@
+title = "S09 isolated training history: fake token only"
+[[rules]]
+id = "rbpo-training-token"
+description = "Obviously fake token in the isolated S09 history"
+regex = '''RBPO_TRAINING_[A-Za-z0-9]{32}'''
+keywords = ["RBPO_TRAINING_"]

@@ -1,0 +1,72 @@
+{
+  "prepared_on": "2026-10-17",
+  "platform": "Linux x86_64",
+  "dotnet_sdk": "10.0.401",
+  "aspnet_runtime": "10.0.12",
+  "source_version_kind": "ZIP source SHA-256, no fabricated app commit",
+  "sha256": {
+    ".gitleaks-training.toml": "4307d1ca2115d61dce244ed45f798ae16c32b63576838eafc1505562fbdea81f",
+    "Directory.Build.props": "a883eb12b9f16ea9b3a14869626c3c99b2e5c54587d0dade64711266e2d5f21f",
+    "NotesApi.slnx": "507ed12810f388d78554f08f036738cef1f8222002d2efc5b08b671c23113f6a",
+    "global.json": "ce61f5ae207d33d00594c77c5999c7f0dc66434e85a85f38090335d588438974",
+    "semgrep.yml": "ab80e2ab2a93cf9ee6a63b001e6e7f6ccea8f3aa69feb0de217e4daa18d8b33d",
+    "src/NotesApi/NotesApi.csproj": "0d427d08506c4072eaddc40fb9484c2fbbbcb3bcf1c9bb7fa652ba046839e5b1",
+    "src/NotesApi/NotesRepository.cs": "7d898ee0d7571de50b94f2522da80d0f3008d6e6680a2aff040d5f3d0994b9b3",
+    "src/NotesApi/Program.cs": "428320c016c41160bbec0594e3b5448e03a66466e877d8893b7f7aacfb7b5cf9",
+    "src/NotesApi/Signals.cs": "a41eea3ae7a79327521af44311f6a4d3e84092bfecd2c2ec6e8d077e687f41b3",
+    "src/NotesApi/packages.lock.json": "bbfca4b5aee20462e0366fa7c7ce0771253d175a7a8994efb3701fa69a95b813",
+    "tests/NotesApi.Tests/NotesApi.Tests.csproj": "f5c9a63eac67d2dcaa65a7d9274712e6cb9b48a1caf79328dddf5b499db71890",
+    "tests/NotesApi.Tests/NotesTests.cs": "e0187038626fa5cf079f77520eda9dd7cc195d97665403bbb264956cd14b217b",
+    "tests/NotesApi.Tests/packages.lock.json": "2019871540f33fc09e1c9d790a63b8b1a314536f5b90116428d36b53209c8fc4"
+  },
+  "semgrep": {
+    "version": "1.175.0",
+    "engine": "CE",
+    "scope": "src",
+    "config": "semgrep.yml",
+    "argv": [
+      "semgrep",
+      "scan",
+      "--config",
+      "semgrep.yml",
+      "--metrics=off",
+      "--disable-version-check",
+      "--no-git-ignore",
+      "--json",
+      "--output",
+      "reports/semgrep-before.json",
+      "src"
+    ],
+    "exit_code": 0,
+    "findings": 8,
+    "parse_errors": 0,
+    "report": "semgrep-before.json"
+  },
+  "gitleaks": {
+    "version": "8.30.1",
+    "config": ".gitleaks-training.toml",
+    "scope": "all reachable refs in an independent clone of fixtures/secret-history.bundle",
+    "history": {
+      "branch": "main",
+      "head": "59a496f3dfbf6b1597bf581748edad9730b918df",
+      "introduced_at": "34d695f7967849875928173c3d4c03c8dc20c52e",
+      "commits": 3,
+      "fake": true
+    },
+    "report": "gitleaks-history.json",
+    "redacted": true,
+    "findings": 1,
+    "expected_finding_exit_code": 1,
+    "tree_findings": 0,
+    "tree_exit_code": 0
+  },
+  "container_images": {
+    "semgrep": "semgrep/semgrep:1.175.0@sha256:b94b53d02fd4a022f9eac4e2af1380f5c3c4c21400e79d3336bdff1d1db5e796",
+    "gitleaks": "ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f"
+  },
+  "limitations": [
+    "Analyzers executed as native Linux tools; container entrypoints checked against source but Docker runtime unavailable.",
+    "Windows PowerShell and VS Code UI not run in preparation environment.",
+    "Local teaching rules only; not an exhaustive production security profile."
+  ]
+}

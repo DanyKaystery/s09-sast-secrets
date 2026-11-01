@@ -1,0 +1,19 @@
+@base = http://localhost:8080
+
+### 0. Работает ли API
+GET {{base}}/health
+
+### 1. Штатный поиск Alice
+GET {{base}}/notes/search?q=note
+X-User: alice
+
+### 2. Поиск с изменением структуры SQL
+GET {{base}}/notes/search?q=%25%27%20OR%201%3D1%20--%20
+X-User: alice
+
+### 3. Добавление заметки
+POST {{base}}/notes
+X-User: alice
+Content-Type: application/json
+
+{"text":"reader's note","tag":"work"}

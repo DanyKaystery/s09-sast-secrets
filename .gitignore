@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+**/lab-data/
+.vs/
+TestResults/
+reports/local/

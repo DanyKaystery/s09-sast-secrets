@@ -1,0 +1,26 @@
+rules:
+  - id: sql-commandtext-assignment
+    languages: [csharp]
+    severity: WARNING
+    message: Review SQL assignment; check data flow and parameter binding.
+    pattern: $CMD.CommandText = $SQL;
+  - id: sql-commandtext-concat
+    languages: [csharp]
+    severity: ERROR
+    message: Concatenation in SQL assignment; check untrusted input and query structure.
+    pattern: $CMD.CommandText = $A + $B;
+  - id: weak-hash-md5
+    languages: [csharp]
+    severity: WARNING
+    message: MD5 used; determine purpose, callers and security requirements.
+    pattern: MD5.HashData(...)
+  - id: insecure-random
+    languages: [csharp]
+    severity: WARNING
+    message: Random is not a cryptographic generator; check security use and reachability.
+    pattern: new Random()
+  - id: password-field-literal
+    languages: [csharp]
+    severity: INFO
+    message: A password string literal; determine whether it is a credential or a field name.
+    pattern: const string $NAME = "password";
