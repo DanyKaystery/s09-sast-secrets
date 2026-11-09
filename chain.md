@@ -1,4 +1,11 @@
-# AVC-01: изоляция заметок при поиске
+# S09 — цепочка проверки SQL-инъекции
+
+**Участник:** Марьин Даниил (M2). **Объект:** учебный `s09-sast-secrets`. **Проверяемое свойство:** поиск не возвращает заметки другого владельца.
+
+| Результат | До исправления | После исправления |
+| --- | --- | --- |
+| Semgrep | [8 сигналов](reports/actual/run-42628309579/semgrep-before.json), включая `sql-commandtext-concat` | [7 сигналов](reports/actual/run-42628309579/semgrep-after.json), `sql-commandtext-concat` отсутствует |
+| Тесты | [4 passed, 1 failed](reports/actual/run-42628309579/tests-before.txt) | [5 passed, 0 failed](reports/actual/run-42628309579/tests-after.txt) |
 
 - **Автор и личный вклад:** Марьин Даниил включил негативный тест, воспроизвёл SQL-инъекцию, параметризовал запрос и выполнил повторные проверки; [PR #1](https://github.com/DanyKaystery/s09-sast-secrets/pull/1).
 - **Объект до:** [commit ebb15a1](https://github.com/DanyKaystery/s09-sast-secrets/commit/ebb15a1b4bfecefbf2b3580e54b66d62da50e763), дерево чистое; [манифест и SHA-256](reports/actual/run-42628309579/source-before.json).
