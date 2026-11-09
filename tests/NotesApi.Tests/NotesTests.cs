@@ -49,8 +49,7 @@ public sealed class NotesTests : IDisposable
         Assert.Single(found!);
         Assert.Equal(added.Id, found![0].Id);
     }
-    // Снимите Skip на S09 до изменения Search; сначала получите красный тест.
-    [Fact(Skip = "S09: включить до исправления SQL.")]
+    [Fact]
     public async Task Search_Injection_Does_Not_Return_Bobs_Note()
     {
         using var bob = As("bob");
