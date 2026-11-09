@@ -88,11 +88,13 @@ jobs:
         shell: bash
         run: |
           set -uo pipefail
+          set +e
           dotnet test /tmp/s09-before/NotesApi.slnx --no-restore \
             --logger 'trx;LogFileName=before.trx' \
             --results-directory /tmp/s09-results/tests-before \
             > /tmp/s09-results/tests-before.txt 2>&1
           code=$?
+          set -e
           printf '%s\n' "$code" > /tmp/s09-results/tests-before-exit-code.txt
           cat /tmp/s09-results/tests-before.txt
           if [ "$code" -eq 0 ]; then
