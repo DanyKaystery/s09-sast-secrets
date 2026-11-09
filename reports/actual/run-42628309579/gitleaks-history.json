@@ -1,0 +1,22 @@
+[
+ {
+  "RuleID": "rbpo-training-token",
+  "Description": "Obviously fake token in the isolated S09 history",
+  "StartLine": 1,
+  "EndLine": 1,
+  "StartColumn": 20,
+  "EndColumn": 65,
+  "Match": "REDACTED",
+  "Secret": "REDACTED",
+  "File": "demo-settings.env",
+  "SymlinkFile": "",
+  "Commit": "34d695f7967849875928173c3d4c03c8dc20c52e",
+  "Entropy": 4.653997,
+  "Author": "RBPO training",
+  "Email": "training@example.invalid",
+  "Date": "2026-10-01T10:00:00Z",
+  "Message": "Add fake training credential",
+  "Tags": [],
+  "Fingerprint": "34d695f7967849875928173c3d4c03c8dc20c52e:demo-settings.env:rbpo-training-token:1"
+ }
+]

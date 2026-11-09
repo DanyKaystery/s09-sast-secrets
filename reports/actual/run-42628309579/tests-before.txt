@@ -1,0 +1,16 @@
+  NotesApi -> /tmp/s09-before/src/NotesApi/bin/Debug/net10.0/NotesApi.dll
+  NotesApi.Tests -> /tmp/s09-before/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll
+Test run for /tmp/s09-before/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.39]     NotesApi.Tests.NotesTests.Search_Injection_Does_Not_Return_Bobs_Note [FAIL]
+  Failed NotesApi.Tests.NotesTests.Search_Injection_Does_Not_Return_Bobs_Note [27 ms]
+  Error Message:
+   Assert.DoesNotContain() Failure: Filter matched in collection
+                                                                                ↓ (pos 1)
+Collection: [Note { Id = 1, Owner = alice, Tag = personal, Text = alice note }, Note { Id = 2, Owner = bob, Tag = personal, Text = bob note }]
+  Stack Trace:
+     at NotesApi.Tests.NotesTests.Search_Injection_Does_Not_Return_Bobs_Note() in /tmp/s09-before/tests/NotesApi.Tests/NotesTests.cs:line 64
+--- End of stack trace from previous location ---
+Results File: /tmp/s09-results/tests-before/before.trx
+
+Failed!  - Failed:     1, Passed:     4, Skipped:     0, Total:     5, Duration: 1 s - NotesApi.Tests.dll (net10.0)

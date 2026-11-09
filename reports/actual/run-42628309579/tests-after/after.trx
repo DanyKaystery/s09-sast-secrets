@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d5869ff4-8020-4003-8fe5-8ebc6d824bc2" name="@runnervmwuk1x 2026-11-09 13:46:25" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-09T13:46:25.9676808+00:00" queuing="2026-11-09T13:46:25.9676808+00:00" start="2026-11-09T13:46:24.5296169+00:00" finish="2026-11-09T13:46:25.9792378+00:00" />
+  <TestSettings name="default" id="9aa5f693-c0d1-4b55-81b3-16d02ae97640">
+    <Deployment runDeploymentRoot="_runnervmwuk1x_2026-11-09_13_46_25" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="3a0bf1b1-7bcf-40bd-8639-b2f46d46063d" testId="c5459a16-1191-55bc-c8dc-5b32ba2cf539" testName="NotesApi.Tests.NotesTests.Search_Injection_Does_Not_Return_Bobs_Note" computerName="runnervmwuk1x" duration="00:00:00.0293486" startTime="2026-11-09T13:46:25.8158665+00:00" endTime="2026-11-09T13:46:25.8158666+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a0bf1b1-7bcf-40bd-8639-b2f46d46063d" />
+    <UnitTestResult executionId="c4fb68cc-5696-46de-a7ee-90d56e4efb5f" testId="0715a9a3-3b97-f109-e891-6a855d102cd6" testName="NotesApi.Tests.NotesTests.Search_Own_Note_Is_Returned" computerName="runnervmwuk1x" duration="00:00:00.0568605" startTime="2026-11-09T13:46:25.7435611+00:00" endTime="2026-11-09T13:46:25.7435612+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4fb68cc-5696-46de-a7ee-90d56e4efb5f" />
+    <UnitTestResult executionId="4bad4848-7c5a-4913-9321-f9f81a640391" testId="3a2ed406-5223-67e3-cac6-406410252bd6" testName="NotesApi.Tests.NotesTests.Add_Text_With_Apostrophe_Works" computerName="runnervmwuk1x" duration="00:00:00.3870746" startTime="2026-11-09T13:46:25.6854983+00:00" endTime="2026-11-09T13:46:25.6855305+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4bad4848-7c5a-4913-9321-f9f81a640391" />
+    <UnitTestResult executionId="b57158fe-1df3-48f0-9df9-53f64f345225" testId="ada6f93a-57eb-6ac9-90b7-564273edc3a3" testName="NotesApi.Tests.NotesTests.Search_No_Match_Returns_Empty" computerName="runnervmwuk1x" duration="00:00:00.0236747" startTime="2026-11-09T13:46:25.7662302+00:00" endTime="2026-11-09T13:46:25.7662303+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b57158fe-1df3-48f0-9df9-53f64f345225" />
+    <UnitTestResult executionId="c3b34640-6749-4388-830c-f4fd92421e75" testId="3e3d612f-da1c-962d-fd1e-b8d64536b762" testName="NotesApi.Tests.NotesTests.Health_Ok" computerName="runnervmwuk1x" duration="00:00:00.0191838" startTime="2026-11-09T13:46:25.7859192+00:00" endTime="2026-11-09T13:46:25.7859194+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c3b34640-6749-4388-830c-f4fd92421e75" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="NotesApi.Tests.NotesTests.Search_Own_Note_Is_Returned" storage="/tmp/s09-after/tests/notesapi.tests/bin/debug/net10.0/notesapi.tests.dll" id="0715a9a3-3b97-f109-e891-6a855d102cd6">
+      <Execution id="c4fb68cc-5696-46de-a7ee-90d56e4efb5f" />
+      <TestMethod codeBase="/tmp/s09-after/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NotesApi.Tests.NotesTests" name="Search_Own_Note_Is_Returned" />
+    </UnitTest>
+    <UnitTest name="NotesApi.Tests.NotesTests.Search_No_Match_Returns_Empty" storage="/tmp/s09-after/tests/notesapi.tests/bin/debug/net10.0/notesapi.tests.dll" id="ada6f93a-57eb-6ac9-90b7-564273edc3a3">
+      <Execution id="b57158fe-1df3-48f0-9df9-53f64f345225" />
+      <TestMethod codeBase="/tmp/s09-after/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NotesApi.Tests.NotesTests" name="Search_No_Match_Returns_Empty" />
+    </UnitTest>
+    <UnitTest name="NotesApi.Tests.NotesTests.Add_Text_With_Apostrophe_Works" storage="/tmp/s09-after/tests/notesapi.tests/bin/debug/net10.0/notesapi.tests.dll" id="3a2ed406-5223-67e3-cac6-406410252bd6">
+      <Execution id="4bad4848-7c5a-4913-9321-f9f81a640391" />
+      <TestMethod codeBase="/tmp/s09-after/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NotesApi.Tests.NotesTests" name="Add_Text_With_Apostrophe_Works" />
+    </UnitTest>
+    <UnitTest name="NotesApi.Tests.NotesTests.Search_Injection_Does_Not_Return_Bobs_Note" storage="/tmp/s09-after/tests/notesapi.tests/bin/debug/net10.0/notesapi.tests.dll" id="c5459a16-1191-55bc-c8dc-5b32ba2cf539">
+      <Execution id="3a0bf1b1-7bcf-40bd-8639-b2f46d46063d" />
+      <TestMethod codeBase="/tmp/s09-after/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NotesApi.Tests.NotesTests" name="Search_Injection_Does_Not_Return_Bobs_Note" />
+    </UnitTest>
+    <UnitTest name="NotesApi.Tests.NotesTests.Health_Ok" storage="/tmp/s09-after/tests/notesapi.tests/bin/debug/net10.0/notesapi.tests.dll" id="3e3d612f-da1c-962d-fd1e-b8d64536b762">
+      <Execution id="c3b34640-6749-4388-830c-f4fd92421e75" />
+      <TestMethod codeBase="/tmp/s09-after/tests/NotesApi.Tests/bin/Debug/net10.0/NotesApi.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="NotesApi.Tests.NotesTests" name="Health_Ok" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c5459a16-1191-55bc-c8dc-5b32ba2cf539" executionId="3a0bf1b1-7bcf-40bd-8639-b2f46d46063d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0715a9a3-3b97-f109-e891-6a855d102cd6" executionId="c4fb68cc-5696-46de-a7ee-90d56e4efb5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a2ed406-5223-67e3-cac6-406410252bd6" executionId="4bad4848-7c5a-4913-9321-f9f81a640391" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ada6f93a-57eb-6ac9-90b7-564273edc3a3" executionId="b57158fe-1df3-48f0-9df9-53f64f345225" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3e3d612f-da1c-962d-fd1e-b8d64536b762" executionId="c3b34640-6749-4388-830c-f4fd92421e75" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 10.0.14)
+[xUnit.net 00:00:00.10]   Discovering: NotesApi.Tests
+[xUnit.net 00:00:00.16]   Discovered:  NotesApi.Tests
+[xUnit.net 00:00:00.17]   Starting:    NotesApi.Tests
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /tmp/s09-after/src/NotesApi
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 POST http://localhost/notes - application/json;+charset=utf-8 42
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: POST /notes'
+info: Microsoft.AspNetCore.Http.Result.CreatedResult[1]
+      Setting HTTP status code 201.
+info: Microsoft.AspNetCore.Http.Result.CreatedResult[3]
+      Writing value of type 'Note' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: POST /notes'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 POST http://localhost/notes - 201 - application/json;+charset=utf-8 131.6395ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/notes/search?q=reader - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type 'List`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/notes/search?q=reader - 200 - application/json;+charset=utf-8 14.5509ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /tmp/s09-after/src/NotesApi
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/notes/search?q=note - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type 'List`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/notes/search?q=note - 200 - application/json;+charset=utf-8 15.6813ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /tmp/s09-after/src/NotesApi
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/notes/search?q=not-present - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type 'List`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/notes/search?q=not-present - 200 - application/json;+charset=utf-8 11.4119ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /tmp/s09-after/src/NotesApi
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/health - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /health'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type '&lt;&gt;f__AnonymousType0`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /health'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/health - 200 - application/json;+charset=utf-8 6.8800ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /tmp/s09-after/src/NotesApi
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/notes/search?q=note - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type 'List`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/notes/search?q=note - 200 - application/json;+charset=utf-8 14.0633ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost/notes/search?q=%25%27%20OR%201%3D1%20--%20 - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type 'List`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /notes/search'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost/notes/search?q=%25%27%20OR%201%3D1%20--%20 - 200 - application/json;+charset=utf-8 1.6200ms
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+[xUnit.net 00:00:00.77]   Finished:    NotesApi.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,188 @@
+name: S09 evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - work/s09-analysis
+
+permissions:
+  contents: read
+
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BEFORE_REF: ebb15a1b4bfecefbf2b3580e54b66d62da50e763
+      SEMGREP_IMAGE: semgrep/semgrep:1.175.0@sha256:b94b53d02fd4a022f9eac4e2af1380f5c3c4c21400e79d3336bdff1d1db5e796
+      GITLEAKS_IMAGE: ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up .NET 10.0.401
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.401
+
+      - name: Prepare before and after worktrees
+        shell: bash
+        run: |
+          set -euo pipefail
+          git worktree add /tmp/s09-before "$BEFORE_REF"
+          git worktree add /tmp/s09-after "$GITHUB_SHA"
+          mkdir -p /tmp/s09-results
+
+      - name: Record source versions and hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import datetime
+          import hashlib
+          import json
+          import pathlib
+          import subprocess
+
+          output = pathlib.Path('/tmp/s09-results')
+          for label, root in [('before', pathlib.Path('/tmp/s09-before')), ('after', pathlib.Path('/tmp/s09-after'))]:
+              selected = [
+                  root / 'global.json', root / 'Directory.Build.props', root / 'NotesApi.slnx',
+                  root / 'semgrep.yml', root / '.gitleaks-training.toml'
+              ]
+              for base in (root / 'src', root / 'tests'):
+                  selected.extend(
+                      path for path in base.rglob('*')
+                      if path.is_file()
+                      and 'bin' not in path.parts and 'obj' not in path.parts
+                      and (path.suffix in {'.cs', '.csproj'} or path.name == 'packages.lock.json')
+                  )
+              hashes = {}
+              for path in sorted(selected):
+                  hashes[path.relative_to(root).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()
+              commit = subprocess.check_output(['git', '-C', root, 'rev-parse', 'HEAD'], text=True).strip()
+              status = subprocess.check_output(['git', '-C', root, 'status', '--short'], text=True).splitlines()
+              report = {
+                  'label': label,
+                  'recorded_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  'commit': commit,
+                  'git_status': status,
+                  'sha256': hashes,
+              }
+              (output / f'source-{label}.json').write_text(json.dumps(report, indent=2) + '\n')
+          PY
+
+      - name: Restore dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet --info > /tmp/s09-results/dotnet-info.txt
+          dotnet restore /tmp/s09-before/NotesApi.slnx --locked-mode
+          dotnet restore /tmp/s09-after/NotesApi.slnx --locked-mode
+
+      - name: Run failing test before the fix
+        shell: bash
+        run: |
+          set -uo pipefail
+          set +e
+          dotnet test /tmp/s09-before/NotesApi.slnx --no-restore \
+            --logger 'trx;LogFileName=before.trx' \
+            --results-directory /tmp/s09-results/tests-before \
+            > /tmp/s09-results/tests-before.txt 2>&1
+          code=$?
+          set -e
+          printf '%s\n' "$code" > /tmp/s09-results/tests-before-exit-code.txt
+          cat /tmp/s09-results/tests-before.txt
+          if [ "$code" -eq 0 ]; then
+            echo 'The negative test unexpectedly passed before the fix.' >&2
+            exit 1
+          fi
+
+      - name: Run all tests after the fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          dotnet test /tmp/s09-after/NotesApi.slnx --no-restore \
+            --logger 'trx;LogFileName=after.trx' \
+            --results-directory /tmp/s09-results/tests-after \
+            > /tmp/s09-results/tests-after.txt 2>&1
+          printf '0\n' > /tmp/s09-results/tests-after-exit-code.txt
+          cat /tmp/s09-results/tests-after.txt
+
+      - name: Run Semgrep before and after
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker run --rm "$SEMGREP_IMAGE" semgrep --version > /tmp/s09-results/semgrep-version.txt
+          for label in before after; do
+            root="/tmp/s09-$label"
+            docker run --rm --network none \
+              --mount "type=bind,source=$root,target=/src" \
+              --mount "type=bind,source=/tmp/s09-results,target=/out" \
+              --workdir /src --env SEMGREP_SEND_METRICS=off \
+              "$SEMGREP_IMAGE" semgrep scan --config semgrep.yml \
+              --metrics=off --disable-version-check --no-git-ignore --json \
+              --output "/out/semgrep-$label.json" src
+            jq -e '.errors | length == 0' "/tmp/s09-results/semgrep-$label.json"
+            jq -r '.results[] | [.check_id, .path, .start.line] | @tsv' \
+              "/tmp/s09-results/semgrep-$label.json" \
+              > "/tmp/s09-results/semgrep-$label-summary.tsv"
+          done
+
+      - name: Run Gitleaks against tree and history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone /tmp/s09-after/fixtures/secret-history.bundle /tmp/s09-secret-history
+          git -C /tmp/s09-secret-history log --oneline --all > /tmp/s09-results/secret-history-log.txt
+          docker run --rm "$GITLEAKS_IMAGE" version > /tmp/s09-results/gitleaks-version.txt
+
+          docker run --rm --network none \
+            --mount type=bind,source=/tmp/s09-secret-history,target=/history,readonly \
+            --mount type=bind,source=/tmp/s09-after,target=/lab,readonly \
+            --mount type=bind,source=/tmp/s09-results,target=/out \
+            "$GITLEAKS_IMAGE" dir /history --config /lab/.gitleaks-training.toml \
+            --redact --no-banner --report-format json --report-path /out/gitleaks-tree.json
+
+          set +e
+          docker run --rm --network none \
+            --mount type=bind,source=/tmp/s09-secret-history,target=/history,readonly \
+            --mount type=bind,source=/tmp/s09-after,target=/lab,readonly \
+            --mount type=bind,source=/tmp/s09-results,target=/out \
+            "$GITLEAKS_IMAGE" git /history --log-opts=--all \
+            --config /lab/.gitleaks-training.toml --redact --no-banner \
+            --report-format json --report-path /out/gitleaks-history.json
+          code=$?
+          set -e
+          printf '%s\n' "$code" > /tmp/s09-results/gitleaks-history-exit-code.txt
+          test "$code" -eq 1
+          test "$(jq 'length' /tmp/s09-results/gitleaks-tree.json)" -eq 0
+          test "$(jq 'length' /tmp/s09-results/gitleaks-history.json)" -eq 1
+
+      - name: Summarize evidence
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo 'Semgrep before findings:'
+            jq '.results | length' /tmp/s09-results/semgrep-before.json
+            echo 'Semgrep after findings:'
+            jq '.results | length' /tmp/s09-results/semgrep-after.json
+            echo 'Gitleaks tree findings:'
+            jq 'length' /tmp/s09-results/gitleaks-tree.json
+            echo 'Gitleaks history findings:'
+            jq 'length' /tmp/s09-results/gitleaks-history.json
+          } | tee /tmp/s09-results/summary.txt
+
+      - name: Upload raw reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s09-raw-reports-${{ github.sha }}
+          path: /tmp/s09-results
+          if-no-files-found: error
+          retention-days: 30
