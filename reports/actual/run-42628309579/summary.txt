@@ -1,0 +1,8 @@
+Semgrep before findings:
+8
+Semgrep after findings:
+7
+Gitleaks tree findings:
+0
+Gitleaks history findings:
+1

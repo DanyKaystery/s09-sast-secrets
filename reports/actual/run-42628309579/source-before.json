@@ -1,0 +1,21 @@
+{
+  "label": "before",
+  "recorded_at_utc": "2026-11-09T13:45:58.011249+00:00",
+  "commit": "ebb15a1b4bfecefbf2b3580e54b66d62da50e763",
+  "git_status": [],
+  "sha256": {
+    ".gitleaks-training.toml": "4307d1ca2115d61dce244ed45f798ae16c32b63576838eafc1505562fbdea81f",
+    "Directory.Build.props": "a883eb12b9f16ea9b3a14869626c3c99b2e5c54587d0dade64711266e2d5f21f",
+    "NotesApi.slnx": "507ed12810f388d78554f08f036738cef1f8222002d2efc5b08b671c23113f6a",
+    "global.json": "ce61f5ae207d33d00594c77c5999c7f0dc66434e85a85f38090335d588438974",
+    "semgrep.yml": "ab80e2ab2a93cf9ee6a63b001e6e7f6ccea8f3aa69feb0de217e4daa18d8b33d",
+    "src/NotesApi/NotesApi.csproj": "0d427d08506c4072eaddc40fb9484c2fbbbcb3bcf1c9bb7fa652ba046839e5b1",
+    "src/NotesApi/NotesRepository.cs": "7d898ee0d7571de50b94f2522da80d0f3008d6e6680a2aff040d5f3d0994b9b3",
+    "src/NotesApi/Program.cs": "428320c016c41160bbec0594e3b5448e03a66466e877d8893b7f7aacfb7b5cf9",
+    "src/NotesApi/Signals.cs": "a41eea3ae7a79327521af44311f6a4d3e84092bfecd2c2ec6e8d077e687f41b3",
+    "src/NotesApi/packages.lock.json": "bbfca4b5aee20462e0366fa7c7ce0771253d175a7a8994efb3701fa69a95b813",
+    "tests/NotesApi.Tests/NotesApi.Tests.csproj": "f5c9a63eac67d2dcaa65a7d9274712e6cb9b48a1caf79328dddf5b499db71890",
+    "tests/NotesApi.Tests/NotesTests.cs": "225c0a5a935287ac657d28686a71af1e5bf99210ec4071c00dc5006aa75f7107",
+    "tests/NotesApi.Tests/packages.lock.json": "2019871540f33fc09e1c9d790a63b8b1a314536f5b90116428d36b53209c8fc4"
+  }
+}

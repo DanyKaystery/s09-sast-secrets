@@ -1,0 +1,8 @@
+sql-commandtext-assignment	src/NotesApi/NotesRepository.cs	27
+sql-commandtext-assignment	src/NotesApi/NotesRepository.cs	35
+sql-commandtext-assignment	src/NotesApi/NotesRepository.cs	48
+sql-commandtext-concat	src/NotesApi/NotesRepository.cs	48
+sql-commandtext-assignment	src/NotesApi/NotesRepository.cs	59
+weak-hash-md5	src/NotesApi/Signals.cs	16
+password-field-literal	src/NotesApi/Signals.cs	23
+insecure-random	src/NotesApi/Signals.cs	30
