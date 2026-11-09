@@ -1,7 +1,5 @@
 # S09. Результаты SAST и поиска секретов
 
-Проверка выполнена в GitHub Actions на отдельном runner. Локальная установка .NET, Docker и PowerShell не использовалась.
-
 ## Сводка
 
 | Проверка | До исправления | После исправления |
@@ -26,6 +24,8 @@
 - Версия «до»: `ebb15a1b4bfecefbf2b3580e54b66d62da50e763`.
 - Версия «после»: `f6f3475fafcee6ce8e39dc262c1c8d5b638131c8`.
 - Исправление причины: `f1ee86edfe55b56af7cca29089469b003fd943aa`.
+- [Читаемый отчёт до исправления](reports/REPORT_BEFORE.md).
+- [Читаемый отчёт после исправления](reports/REPORT_AFTER.md).
 - [Semgrep до](reports/actual/run-42628309579/semgrep-before.json) и [Semgrep после](reports/actual/run-42628309579/semgrep-after.json).
 - [Тесты до](reports/actual/run-42628309579/tests-before.txt) и [тесты после](reports/actual/run-42628309579/tests-after.txt).
 - [Gitleaks по дереву](reports/actual/run-42628309579/gitleaks-tree.json) и [Gitleaks по истории](reports/actual/run-42628309579/gitleaks-history.json).

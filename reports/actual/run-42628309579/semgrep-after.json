@@ -1,1 +1,250 @@
-{"version":"1.175.0","results":[{"check_id":"sql-commandtext-assignment","path":"src/NotesApi/NotesRepository.cs","start":{"line":27,"col":9,"offset":667},"end":{"line":31,"col":13,"offset":879},"extra":{"message":"Review SQL assignment; check data flow and parameter binding.","metadata":{},"severity":"WARNING","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}},{"check_id":"sql-commandtext-assignment","path":"src/NotesApi/NotesRepository.cs","start":{"line":35,"col":9,"offset":968},"end":{"line":35,"col":59,"offset":1018},"extra":{"message":"Review SQL assignment; check data flow and parameter binding.","metadata":{},"severity":"WARNING","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}},{"check_id":"sql-commandtext-assignment","path":"src/NotesApi/NotesRepository.cs","start":{"line":48,"col":9,"offset":1407},"end":{"line":51,"col":13,"offset":1549},"extra":{"message":"Review SQL assignment; check data flow and parameter binding.","metadata":{},"severity":"WARNING","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}},{"check_id":"sql-commandtext-assignment","path":"src/NotesApi/NotesRepository.cs","start":{"line":62,"col":9,"offset":1888},"end":{"line":65,"col":13,"offset":2032},"extra":{"message":"Review SQL assignment; check data flow and parameter binding.","metadata":{},"severity":"WARNING","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}},{"check_id":"weak-hash-md5","path":"src/NotesApi/Signals.cs","start":{"line":16,"col":21,"offset":788},"end":{"line":16,"col":64,"offset":831},"extra":{"message":"MD5 used; determine purpose, callers and security requirements.","metadata":{},"severity":"WARNING","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}},{"check_id":"password-field-literal","path":"src/NotesApi/Signals.cs","start":{"line":23,"col":9,"offset":1053},"end":{"line":23,"col":53,"offset":1097},"extra":{"message":"A password string literal; determine whether it is a credential or a field name.","metadata":{},"severity":"INFO","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}},{"check_id":"insecure-random","path":"src/NotesApi/Signals.cs","start":{"line":30,"col":19,"offset":1295},"end":{"line":30,"col":31,"offset":1307},"extra":{"message":"Random is not a cryptographic generator; check security use and reachability.","metadata":{},"severity":"WARNING","fingerprint":"requires login","lines":"requires login","validation_state":"NO_VALIDATOR","engine_kind":"OSS"}}],"errors":[],"paths":{"scanned":["src/NotesApi/NotesRepository.cs","src/NotesApi/Program.cs","src/NotesApi/Signals.cs","src/NotesApi/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs","src/NotesApi/obj/Debug/net10.0/NotesApi.AssemblyInfo.cs","src/NotesApi/obj/Debug/net10.0/NotesApi.GlobalUsings.g.cs"]},"time":{"rules":[],"rules_parse_time":0.0016078948974609375,"profiling_times":{"config_time":0.15894460678100586,"core_time":0.3155992031097412,"ignores_time":8.749961853027344e-05,"total_time":0.48264527320861816},"parsing_time":{"total_time":0.0,"per_file_time":{"mean":0.0,"std_dev":0.0},"very_slow_stats":{"time_ratio":0.0,"count_ratio":0.0},"very_slow_files":[]},"scanning_time":{"total_time":0.04831409454345703,"per_file_time":{"mean":0.008052349090576172,"std_dev":6.27940402182503e-05},"very_slow_stats":{"time_ratio":0.0,"count_ratio":0.0},"very_slow_files":[]},"matching_time":{"total_time":0.0,"per_file_and_rule_time":{"mean":0.0,"std_dev":0.0},"very_slow_stats":{"time_ratio":0.0,"count_ratio":0.0},"very_slow_rules_on_files":[]},"tainting_time":{"total_time":0.0,"per_def_and_rule_time":{"mean":0.0,"std_dev":0.0},"very_slow_stats":{"time_ratio":0.0,"count_ratio":0.0},"very_slow_rules_on_defs":[]},"fixpoint_timeouts":[],"prefiltering":{"project_level_time":0.0,"file_level_time":0.0,"rules_with_project_prefilters_ratio":0.0,"rules_with_file_prefilters_ratio":1.0,"rules_selected_ratio":0.23333333333333334,"rules_matched_ratio":0.23333333333333334},"targets":[],"total_bytes":0,"max_memory_bytes":109180352},"engine_requested":"OSS","skipped_rules":[],"profiling_results":[]}
+{
+  "version": "1.175.0",
+  "results": [
+    {
+      "check_id": "sql-commandtext-assignment",
+      "path": "src/NotesApi/NotesRepository.cs",
+      "start": {
+        "line": 27,
+        "col": 9,
+        "offset": 667
+      },
+      "end": {
+        "line": 31,
+        "col": 13,
+        "offset": 879
+      },
+      "extra": {
+        "message": "Review SQL assignment; check data flow and parameter binding.",
+        "metadata": {},
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "sql-commandtext-assignment",
+      "path": "src/NotesApi/NotesRepository.cs",
+      "start": {
+        "line": 35,
+        "col": 9,
+        "offset": 968
+      },
+      "end": {
+        "line": 35,
+        "col": 59,
+        "offset": 1018
+      },
+      "extra": {
+        "message": "Review SQL assignment; check data flow and parameter binding.",
+        "metadata": {},
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "sql-commandtext-assignment",
+      "path": "src/NotesApi/NotesRepository.cs",
+      "start": {
+        "line": 48,
+        "col": 9,
+        "offset": 1407
+      },
+      "end": {
+        "line": 51,
+        "col": 13,
+        "offset": 1549
+      },
+      "extra": {
+        "message": "Review SQL assignment; check data flow and parameter binding.",
+        "metadata": {},
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "sql-commandtext-assignment",
+      "path": "src/NotesApi/NotesRepository.cs",
+      "start": {
+        "line": 62,
+        "col": 9,
+        "offset": 1888
+      },
+      "end": {
+        "line": 65,
+        "col": 13,
+        "offset": 2032
+      },
+      "extra": {
+        "message": "Review SQL assignment; check data flow and parameter binding.",
+        "metadata": {},
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "weak-hash-md5",
+      "path": "src/NotesApi/Signals.cs",
+      "start": {
+        "line": 16,
+        "col": 21,
+        "offset": 788
+      },
+      "end": {
+        "line": 16,
+        "col": 64,
+        "offset": 831
+      },
+      "extra": {
+        "message": "MD5 used; determine purpose, callers and security requirements.",
+        "metadata": {},
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "password-field-literal",
+      "path": "src/NotesApi/Signals.cs",
+      "start": {
+        "line": 23,
+        "col": 9,
+        "offset": 1053
+      },
+      "end": {
+        "line": 23,
+        "col": 53,
+        "offset": 1097
+      },
+      "extra": {
+        "message": "A password string literal; determine whether it is a credential or a field name.",
+        "metadata": {},
+        "severity": "INFO",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "insecure-random",
+      "path": "src/NotesApi/Signals.cs",
+      "start": {
+        "line": 30,
+        "col": 19,
+        "offset": 1295
+      },
+      "end": {
+        "line": 30,
+        "col": 31,
+        "offset": 1307
+      },
+      "extra": {
+        "message": "Random is not a cryptographic generator; check security use and reachability.",
+        "metadata": {},
+        "severity": "WARNING",
+        "fingerprint": "requires login",
+        "lines": "requires login",
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      "src/NotesApi/NotesRepository.cs",
+      "src/NotesApi/Program.cs",
+      "src/NotesApi/Signals.cs",
+      "src/NotesApi/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs",
+      "src/NotesApi/obj/Debug/net10.0/NotesApi.AssemblyInfo.cs",
+      "src/NotesApi/obj/Debug/net10.0/NotesApi.GlobalUsings.g.cs"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 0.0016078948974609375,
+    "profiling_times": {
+      "config_time": 0.15894460678100586,
+      "core_time": 0.3155992031097412,
+      "ignores_time": 0.00008749961853027344,
+      "total_time": 0.48264527320861816
+    },
+    "parsing_time": {
+      "total_time": 0.0,
+      "per_file_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 0.04831409454345703,
+      "per_file_time": {
+        "mean": 0.008052349090576172,
+        "std_dev": 0.0000627940402182503
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_files": []
+    },
+    "matching_time": {
+      "total_time": 0.0,
+      "per_file_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0.0,
+      "per_def_and_rule_time": {
+        "mean": 0.0,
+        "std_dev": 0.0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.0,
+        "count_ratio": 0.0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [],
+    "prefiltering": {
+      "project_level_time": 0.0,
+      "file_level_time": 0.0,
+      "rules_with_project_prefilters_ratio": 0.0,
+      "rules_with_file_prefilters_ratio": 1.0,
+      "rules_selected_ratio": 0.23333333333333334,
+      "rules_matched_ratio": 0.23333333333333334
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 109180352
+  },
+  "engine_requested": "OSS",
+  "skipped_rules": [],
+  "profiling_results": []
+}

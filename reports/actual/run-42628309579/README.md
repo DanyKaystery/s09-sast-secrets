@@ -1,6 +1,6 @@
 # Сохранённые результаты запуска 42628309579
 
-Отчёты получены собственным запуском в форке: [GitHub Actions run 42628309579](https://github.com/DanyKaystery/s09-sast-secrets/actions/runs/42628309579). Анализ выполнялся на GitHub-hosted runner; локальные .NET, Docker и PowerShell не использовались.
+Отчёты получены собственным запуском в форке: [GitHub Actions run 42628309579](https://github.com/DanyKaystery/s09-sast-secrets/actions/runs/42628309579).
 
 ## Происхождение
 
