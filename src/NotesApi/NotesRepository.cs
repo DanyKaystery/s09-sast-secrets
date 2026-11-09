@@ -45,9 +45,12 @@ public sealed class NotesRepository
     {
         using var conn = Open();
         using var cmd = conn.CreateCommand();
-        cmd.CommandText =
-            "SELECT id, owner, tag, text FROM notes " +
-            "WHERE owner = '" + owner + "' AND text LIKE '%" + q + "%';";
+        cmd.CommandText = """
+            SELECT id, owner, tag, text FROM notes
+            WHERE owner = $owner AND text LIKE $pattern;
+        """;
+        cmd.Parameters.AddWithValue("$owner", owner);
+        cmd.Parameters.AddWithValue("$pattern", $"%{q}%");
         return Read(cmd);
     }
 
